@@ -1,4 +1,49 @@
-#heading
+.header
 {
-    color: red;
+display:flex;  /*   When you need one-dimensional layouts (arranging items in a single row or column or horizently)*/
+justify-content:space-between;   /* First Item: Aligns at the start of the container.
+Last Item: Aligns at the end of the container.  */
+border: 1px solid black;   /*This is for header border */
+}
+.logo
+{
+    width:150px;      /* Size of the logo */
+}
+.nav-items>ul        /* nav items ul horizontely*/
+{
+font-size: 20px;
+display:flex;   /* font size of ul(Home, AboutUs, Cart, ContactUs) */
+list-style-type:none;  /* To remove dots */
+}
+.nav-items>ul>li    /* space between list items */
+{
+    padding: 10px;
+    margin: 10px;
+}
+.restaurant-container
+{
+    display:flex;
+    flex-wrap: wrap;       /* It is used to allow flex items within a flex container to wrap onto the next line if there isn't enough space in a single row or column*/
+
+}
+.res-card
+{
+width: 200px;
+background-color:azure;
+padding: 5px;           /* The space inside an element between its content and its border */
+margin: 5px;           /* The space outside an element that separates it from other elements.*/
+}
+.res-card:hover
+{
+    border: 1px solid black;       /* Border will be showing whenever mouse hover */
+    cursor: pointer;                  /* Curser will be pointer whenever mouse hover */
+}
+
+.search
+{
+    padding: 15px;
+}
+.res-logo
+{
+    width:100%;
 }
