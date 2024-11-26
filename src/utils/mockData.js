@@ -1,54 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom"
-
-//Header Component
-
-const HeaderComponent = () => {
-    return (
-        <div className="header">
-            <div className="logo-container">
-                <img className="logo" src="https://www.logodesign.net/logo/smoking-burger-with-lettuce-3624ld.png?nwm=1&nws=1&industry=fast-food&sf=&txt_keyword=All" alt="Logo" />
-            </div>
-            <div className="nav-items">
-                <ul>
-                    <li>
-                        Home
-                    </li>
-                    <li>
-                        About us
-                    </li>
-                    <li>
-                        Contact us
-                    </li>
-                    <li>
-                        Cart
-                    </li>
-                </ul>
-
-            </div>
-        </div>
-    )
-}
-
-//Restaurant Component
-
-const RestaurantCard = (props) => {
-    const { resData } = props;
-    const { name,cuisines,costForTwo,avgRating,sla,cloudinaryImageId } = resData?.card?.card?.info;   //Destructuring the API data attributes.
-    return (
-        <div className="res-card">
-            <img className="res-logo" src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" + cloudinaryImageId} />
-            <h3>{name}</h3>
-            <h4>{cuisines.join(" , ")}</h4>
-            <h4>{costForTwo}</h4>
-            <h4>{avgRating}</h4>
-            <h4>{sla.deliveryTime} Minutes</h4>
-        </div>
-    )
-}
-
-//Swiggy Restaurants API
-
 const resList = [  {
     "card": {
         "card": {
@@ -270,7 +219,7 @@ const resList = [  {
                     "Andhra",
                     "South Indian"
                 ],
-                "avgRating": 4.5,
+                "avgRating": 4.0,
                 "parentId": "410569",
                 "avgRatingString": "4.5",
                 "totalRatingsString": "9.8K+",
@@ -573,7 +522,7 @@ const resList = [  {
                     "Andhra",
                     "Biryani"
                 ],
-                "avgRating": 4.6,
+                "avgRating": 3.9,
                 "parentId": "623",
                 "avgRatingString": "4.6",
                 "totalRatingsString": "28K+",
@@ -770,40 +719,6 @@ const resList = [  {
     }
 }
 
-
 ]
 
-// Body Component
-
-const Body = () => {
-    return (
-        <div className="body">
-            <div className="search">
-                search
-            </div>
-            <div className="restaurant-container">
-                {resList.map((restaurant) =>
-
-                    <RestaurantCard key = {restaurant?.card?.card?.info?.id} resData={restaurant} />  // Added  Restaurant component inside body component.
-
-                )}
-            </div>
-
-        </div>
-    )
-}
-
-//  This is main AppLayout component which includes HeaderComponent and Body component.
-
-const AppLayout = () => {
-    return (
-        <div className="appLayout">
-            <HeaderComponent />
-            <Body />
-        </div>
-    )
-}
-
-// const jsxheading = <h1 id = "heading">Create Element Using JSX!</h1>
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout />)    // we are rendering main AppLayout component
+export default resList;

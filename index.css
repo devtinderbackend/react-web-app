@@ -47,3 +47,7 @@ margin: 5px;           /* The space outside an element that separates it from ot
 {
     width:100%;
 }
+.filter-btn
+{
+    margin: 10px;
+}
