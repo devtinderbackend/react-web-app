@@ -39,9 +39,10 @@ margin: 5px;           /* The space outside an element that separates it from ot
     cursor: pointer;                  /* Curser will be pointer whenever mouse hover */
 }
 
-.search
+.filter-search
 {
-    padding: 15px;
+    padding: 5px;
+    margin:5px;
 }
 .res-logo
 {
@@ -50,4 +51,25 @@ margin: 5px;           /* The space outside an element that separates it from ot
 .filter-btn
 {
     margin: 10px;
+    margin-left: 40px;
+}
+.shimmer-container
+{
+display: flex;
+flex-wrap: wrap;
+}
+.shimmer-card
+{
+width: 200px;
+height: 400px;
+background-color:azure;
+padding: 5px;           /* The space inside an element between its content and its border */
+margin: 5px;
+}
+
+.btn-name
+{
+    padding: 0 20px;
+    margin: 5px;
+    cursor: pointer;
 }

@@ -2,7 +2,7 @@ import { IMAGE_URL } from "../utils/constants";
 
 const RestaurantCard = (props) => {
     const { resData } = props;
-    const { name, cuisines, costForTwo, avgRating, sla, cloudinaryImageId } = resData?.card?.card?.info;   //Destructuring the API data attributes.
+    const { name, cuisines, costForTwo, avgRating, sla, cloudinaryImageId } = resData?.info;   //Destructuring the API data attributes.
     return (
         <div className="res-card">
             <img className="res-logo" src={IMAGE_URL + cloudinaryImageId} />
