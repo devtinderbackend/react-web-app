@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import Shimmer from "./Shimmer";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
+import RestaurantCategory from "./RestaurantCategory";
 
 const RestaurantMenu = () => {
     const { restId } = useParams();
@@ -12,6 +13,11 @@ const RestaurantMenu = () => {
     const menuSection =
         restInfo?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[2]?.card
             ?.card || {};
+    const categories =
+        restInfo?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.filter((c) =>
+            c?.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory" ||
+            c?.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.NestedItemCategory"
+        ) || [];
 
     // Handle cases where itemCards are nested inside categories
 
@@ -29,18 +35,10 @@ const RestaurantMenu = () => {
     };
 
     return (
-        <div className="menu">
-            <h1>{name}</h1>
-            <p>{cuisines.join(",")} - {costForTwoMessage}</p>
-            <p>{sla.deliveryTime} Minutes</p>
-            <h2>Menu</h2>
-            <ul>
-                {itemCards.map((item) => (<li key={item.card.info.id}>{
-                    item.card.info.name
-                } - {formatPrice(item.card.info.price || item.card.info.defaultPrice)}</li>))}
-
-            </ul>
-
+        <div className="text-center">
+            <h1 className="text-2xl font-bold text-gray-800 m-0 no-underline">{name}</h1>
+            <p className="text-lg text-gray-500 my-1">{cuisines.join(",")} - {costForTwoMessage}</p>
+            {categories.map((category) => <RestaurantCategory key={category.card.card.id} data={category?.card?.card} />)}
         </div>
     )
 }

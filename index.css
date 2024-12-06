@@ -1,55 +1,60 @@
-.header
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* .header
 {
-display:flex;  /*   When you need one-dimensional layouts (arranging items in a single row or column or horizently)*/
-justify-content:space-between;   /* First Item: Aligns at the start of the container.
-Last Item: Aligns at the end of the container.  */
-border: 1px solid black;   /*This is for header border */
+display:flex;    When you need one-dimensional layouts (arranging items in a single row or column or horizently)
+justify-content:space-between;   First Item: Aligns at the start of the container.
+Last Item: Aligns at the end of the container.
+border: 1px solid black;   This is for header border
+} */
+
+/* .logo
+{
+    width:150px;      Size of the logo
 }
 
-.logo
-{
-    width:150px;      /* Size of the logo */
-}
-
-.nav-items>ul        /* nav items ul horizontely*/
+.nav-items>ul        nav items ul horizontely
 {
 font-size: 20px;
-display:flex;   /* font size of ul(Home, AboutUs, Cart, ContactUs) */
-list-style-type:none;  /* To remove dots */
+display:flex;   font size of ul(Home, AboutUs, Cart, ContactUs)
+list-style-type:none;  To remove dots
 }
 
-.nav-items>ul>li    /* space between list items */
+.nav-items>ul>li    space between list items
 {
     padding: 10px;
     margin: 10px;
-}
+} */
 
 
 /* Restaurant Card Styles */
-.res-card {
+/* .res-card {
     width: 250px;
-    background-color: #f4f4f4; /* A light background for better contrast */
+    background-color: #f4f4f4;     A light background for better contrast
     padding: 15px;
     margin: 10px;
-    border-radius: 8px; /* Slight rounding of the corners for a soft look */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for card depth */
-    transition: all 0.3s ease; /* Smooth transition for hover effect */
-}
+    border-radius: 8px;             Slight rounding of the corners for a soft look
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for card depth
+    transition: all 0.3s ease;      Smooth transition for hover effect
+} */
 
-.res-card:hover {
-    border: 1px solid #ddd; /* Light border on hover */
+/* .res-card:hover {
+    border: 1px solid #ddd;  Light border on hover
     cursor: pointer;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Enhanced shadow on hover */
-}
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); Enhanced shadow on hover
+} */
 
-.res-logo {
+/* .res-logo {
     width: 100%;
     height: 150px;
-    object-fit: cover; /* Ensures the image covers the space nicely without distortion */
-    border-radius: 8px; /* Rounded corners for the image */
-}
+    object-fit: cover;        Ensures the image covers the space nicely without distortion
+    border-radius: 8px;        Rounded corners for the image
+} */
 
-.res-card-info {
+/* .res-card-info {
     padding-top: 10px;
 }
 
@@ -59,9 +64,9 @@ list-style-type:none;  /* To remove dots */
     font-weight: bold;
     text-decoration: none;
     color: #333;
-}
+} */
 
-.res-card-info .cuisines {
+/* .res-card-info .cuisines {
     font-size: 0.9rem;
     color: #777;
     margin: 5px 0;
@@ -78,24 +83,24 @@ list-style-type:none;  /* To remove dots */
     display: inline-block;
     font-weight: 500;
     color: #555;
-}
+} */
 
-.card-details .cost {
-    color: #f39c12; /* A warm color for the cost */
-}
+/* .card-details .cost {
+    color: #f39c12;         A warm color for the cost
+} */
 
-.card-details .rating {
+/* .card-details .rating {
     background-color: #e67e22;
     color: white;
     padding: 5px 10px;
     border-radius: 5px;
-}
+} */
 
-.card-details .delivery-time {
-    color: #2ecc71; /* Green for delivery time */
-}
+/* .card-details .delivery-time {
+    color: #2ecc71;               Green for delivery time
+} */
 
-.restaurant-container
+/* .restaurant-container
 {
     display:flex;
     flex-wrap: wrap;
@@ -121,20 +126,20 @@ a {
 {
 display: flex;
 flex-wrap: wrap;
-}
+} */
 
-.shimmer-card
+/* .shimmer-card
 {
 width: 200px;
 height: 400px;
 background-color:azure;
-padding: 5px;           /* The space inside an element between its content and its border */
+padding: 5px;                  The space inside an element between its content and its border
 margin: 5px;
-}
+} */
 
-.btn-name
+/* .btn-name
 {
     padding: 0 20px;
     margin: 5px;
     cursor: pointer;
-}
+} */
