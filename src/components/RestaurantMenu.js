@@ -2,10 +2,18 @@ import { useParams } from "react-router-dom";
 import Shimmer from "./Shimmer";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import RestaurantCategory from "./RestaurantCategory";
+import { useState } from "react";
 
 const RestaurantMenu = () => {
     const { restId } = useParams();
     const restInfo = useRestaurantMenu(restId);
+    // const [showIndex, setShowIndex]= useState(null);
+    const [activeIndex, setActiveIndex] = useState(null); // Tracks the currently open accordion item
+
+    const handleToggle = (index) => {
+      setActiveIndex((prevIndex) => (prevIndex === index ? null : index)); // Toggle current or close if already open
+    };
+
     if (restInfo === null) {
         return <Shimmer />
     }
@@ -18,7 +26,7 @@ const RestaurantMenu = () => {
             c?.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory" ||
             c?.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.NestedItemCategory"
         ) || [];
-
+console.log("category:",categories)
     // Handle cases where itemCards are nested inside categories
 
     const itemCards =
@@ -38,7 +46,11 @@ const RestaurantMenu = () => {
         <div className="text-center">
             <h1 className="text-2xl font-bold text-gray-800 m-0 no-underline">{name}</h1>
             <p className="text-lg text-gray-500 my-1">{cuisines.join(",")} - {costForTwoMessage}</p>
-            {categories.map((category) => <RestaurantCategory key={category.card.card.id} data={category?.card?.card} />)}
+            {categories.map((category,index) => <RestaurantCategory key={index}
+            data={category?.card?.card}
+            isOpen={activeIndex === index}
+            onToggle={() => handleToggle(index)}
+             />)}
         </div>
     )
 }

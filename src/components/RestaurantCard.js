@@ -1,8 +1,11 @@
 import { IMAGE_URL } from "../utils/constants";
+import { useContext } from "react";
+import UserContext from "../utils/UserContext";
 
 const RestaurantCard = (props) => {
     const { resData } = props;
     const { name, cuisines, costForTwo, avgRating, sla, cloudinaryImageId } = resData?.info;
+    const {loggedInUser}= useContext(UserContext)
 
     return (
         <div className="flex flex-wrap">
@@ -10,6 +13,7 @@ const RestaurantCard = (props) => {
                 <img className="w-full h-36 object-cover rounded-lg" src={IMAGE_URL + cloudinaryImageId} alt={name} />
                 <div className="pt-10">
                     <h3 className="text-lg font-bold text-gray-800 m-0 no-underline">{name}</h3>
+                    <h3 className="text-lg font-bold text-gray-800 m-0 no-underline">{loggedInUser}</h3>
                     <p className="text-sm text-gray-500 my-1">{cuisines.join(" , ")}</p>
                     <div className="flex justify-between text-sm mt-2.5">
                         <span className="inline-block font-medium text-gray-600">{costForTwo}</span>
