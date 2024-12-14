@@ -4,11 +4,15 @@ import { Link } from "react-router-dom"
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
 import { useContext } from "react";
+import { useSelector } from "react-redux";
 
 const HeaderComponent = () => {
     const [reactBtnName, setReactBtnName] = useState("Login");
     const onlineStatus = useOnlineStatus();
     const {loggedInUser}= useContext(UserContext)
+    const cartItems = useSelector((state)=>state?.cart.items);
+    console.log(cartItems)
+
     return (
         <div className="flex justify-between shadow-lg m-2 mb-5">
             <div className="logo-container">
@@ -31,8 +35,9 @@ const HeaderComponent = () => {
                     <li>
                         <Link to="/grocery">Grocery</Link>
                     </li>
-                    <li className="px-4">
-                        Cart
+                    <li className="px-4 text-lg font-bold">
+                    <Link to="/cart"> Cart({cartItems.length})</Link>
+
                     </li>
                     <button className="btn-name" onClick={() =>
                         reactBtnName === "Login" ? setReactBtnName("Logout") : setReactBtnName("Login")

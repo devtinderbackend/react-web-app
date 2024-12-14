@@ -1,6 +1,9 @@
 import { IMAGE_URL } from "../utils/constants";
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice";
 
 const ItemLists = ({ items }) => {
+
 
     // Check items are array or not
 
@@ -8,6 +11,10 @@ const ItemLists = ({ items }) => {
         console.error("The 'items' prop must be an array.");
         return null;
     }
+ const disPatch = useDispatch();
+ const handleAddItem = (item) =>{
+    disPatch(addItem(item));
+ }
 
     return (
         <div className="p-4">
@@ -35,7 +42,7 @@ const ItemLists = ({ items }) => {
                             alt={item.card.info.name}
                         />
                         <button
-                            className="absolute bottom-2 right-2 bg-white text-green-500 px-3 py-1 rounded-md shadow hover:bg-gray-300 transition font-bold"
+                            className="absolute bottom-2 right-2 bg-white text-green-500 px-3 py-1 rounded-md shadow hover:bg-gray-300 transition font-bold" onClick={()=>handleAddItem(item)}
                         >
                             Add +
                         </button>
