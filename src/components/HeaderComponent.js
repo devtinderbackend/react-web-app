@@ -11,7 +11,7 @@ const HeaderComponent = () => {
     const onlineStatus = useOnlineStatus();
     const {loggedInUser}= useContext(UserContext)
     const cartItems = useSelector((state)=>state?.cart.items);
-    console.log(cartItems)
+    // console.log(cartItems)
 
     return (
         <div className="flex justify-between shadow-lg m-2 mb-5">

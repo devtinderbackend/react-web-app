@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import ItemLists from './ItemLists'
 import RestaurantSubCategoryItemLists from './RestaurantSubCategoryItemLists'
-import { useState } from 'react'
+// import { useState } from 'react'
 
 const RestaurantCategory = ({ data, isOpen, onToggle }) => {
     const categories = Array.isArray(data?.categories) ? data.categories : [];
