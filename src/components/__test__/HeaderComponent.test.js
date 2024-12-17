@@ -43,7 +43,7 @@ describe("Test Contact Us Component", () => {
         </Provider></BrowserRouter>
 
         );
-        const loginButton  = screen.getByRole("button",{name:"Logiin"})
+        const loginButton  = screen.getByRole("button",{name:"Login"})
         expect(loginButton).toBeInTheDocument();
     })
 
