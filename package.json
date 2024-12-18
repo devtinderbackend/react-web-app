@@ -6,7 +6,8 @@
     "start": "parcel index.html",
     "build": "parcel build index.html",
     "clean-start": "rm -rf .parcel-cache && npm start",
-    "test": "jest"
+    "test": "jest",
+    "watch-test": "jest --watch"
   },
   "author": "Harikesh yadav",
   "license": "ISC",

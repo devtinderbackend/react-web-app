@@ -9,7 +9,7 @@ const RestaurantCard = (props) => {
     const {loggedInUser}= useContext(UserContext)
 
     return (
-        <div className="flex flex-wrap">
+        <div className="flex flex-wrap" data-testid="restCard">
             <div className="w-60 bg-red-50 p-15 m-10 border-r-8 border border-transparent hover:border-gray-300 hover:shadow-lg hover:cursor-pointer transition-shadow rounded-lg">
                 <img className="w-full h-36 object-cover rounded-lg" src={IMAGE_URL + cloudinaryImageId} alt={name} />
                 <div className="pt-10">

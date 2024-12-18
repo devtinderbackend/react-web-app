@@ -34,7 +34,7 @@ const Body = () => {
     return restaurantList.length === 0 ? (<Shimmer />) : (
         <div className="body">
             <div className="filter-search">
-                <input type="text" className="m-2 p-1 border border-solid border-black" value={searchText} onChange={(e) => {
+                <input type="text" data-testid="searchInput" className="m-2 p-1 border border-solid border-black" value={searchText} onChange={(e) => {
                     setSearchText(e.target.value)
                 }
                 }></input>
