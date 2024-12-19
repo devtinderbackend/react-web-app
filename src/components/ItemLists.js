@@ -21,7 +21,7 @@ const ItemLists = ({ items }) => {
             {items.map((item) => (
                 <div
                     key={item.card.info.id}
-                    className="m-2 p-4 border-b border-gray-200 flex justify-between items-center"
+                    className="m-2 p-4 border-b border-gray-200 flex justify-between items-center" data-testid="restMenu"
                 >
                     {/* Item Details */}
                     <div className="flex-1">
